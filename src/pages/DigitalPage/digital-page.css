@@ -1,0 +1,38 @@
+.digital-page {
+  width: 100vw;
+  min-height: calc(100vh - var(--nav-height));
+  margin-top: var(--nav-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.digital-download {
+  margin: 0 5rem;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital-download img {
+  width: 600px;
+}
+
+.digital-download a {
+  background: var(--dark-blue);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .digital-download img {
+    width: 300px;
+  }
+}
