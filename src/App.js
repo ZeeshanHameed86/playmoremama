@@ -1,28 +1,5 @@
 import React, { Suspense, lazy } from "react";
 import HomePage from "./pages/HomePage";
-//import SingleProductsPage from "./pages/SingleProductPage/SingleProductsPage";
-//import CartPage from "./pages/CartPage/CartPage";
-//import FAQPage from "./pages/FAQPage/FAQPage";
-// import SuccessPage from "./pages/SuccessFailedPage/SuccessPage";
-// import FailedPage from "./pages/SuccessFailedPage/FailedPage";
-// import DigitalPage from "./pages/DigitalPage/DigitalPage";
-// import ReviewPage from "./pages/ReviewPage/ReviewPage";
-// import Page404 from "./pages/Page404/Page404";
-// import PrivacyPolicyPage from "./pages/Privacy&Terms/PrivacyPolicyPage";
-// import TermsConditionsPage from "./pages/Privacy&Terms/TermsConditionsPage";
-// import {
-//   HomePage,
-//   SingleProductsPage,
-//   CartPage,
-//   FAQPage,
-//   SuccessPage,
-//   FailedPage,
-//   DigitalPage,
-//   ReviewPage,
-//   Page404,
-//   PrivacyPolicyPage,
-//   TermsConditionsPage,
-// } from "./pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const ProductsPageLazy = lazy(() =>
@@ -82,7 +59,7 @@ const App = () => {
           path="/products"
           exact
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className="loading"></div>}>
               <ProductsPageLazy />
             </Suspense>
           }
@@ -90,7 +67,7 @@ const App = () => {
         <Route
           path="/products/:id"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className="loading"></div>}>
               <SingleProductPageLazy />
             </Suspense>
           }
@@ -98,7 +75,7 @@ const App = () => {
         <Route
           path="/cart"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className="loading"></div>}>
               <CartPageLazy />
             </Suspense>
           }
@@ -106,7 +83,7 @@ const App = () => {
         <Route
           path="/faqs"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className="loading"></div>}>
               <FAQPageLazy />
             </Suspense>
           }
@@ -115,7 +92,7 @@ const App = () => {
           path="/success/:id"
           exact
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className="loading"></div>}>
               <SuccessPageLazy />
             </Suspense>
           }
@@ -124,7 +101,7 @@ const App = () => {
           path="/failed"
           exact
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className="loading"></div>}>
               <FailedPageLazy />
             </Suspense>
           }
@@ -133,7 +110,7 @@ const App = () => {
           path="/review/:id"
           exact
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className="loading"></div>}>
               <ReviewPageLazy />
             </Suspense>
           }
@@ -142,7 +119,7 @@ const App = () => {
           path="/digital"
           exact
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className="loading"></div>}>
               <DigitalPageLazy />
             </Suspense>
           }
@@ -151,7 +128,7 @@ const App = () => {
           path="/privacypolicy"
           exact
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className="loading"></div>}>
               <PrivacyPageLazy />
             </Suspense>
           }
@@ -160,7 +137,7 @@ const App = () => {
           path="/terms"
           exact
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className="loading"></div>}>
               <TermsPageLazy />
             </Suspense>
           }
@@ -168,7 +145,7 @@ const App = () => {
         <Route
           path="*"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className="loading"></div>}>
               <Page404Lazy />
             </Suspense>
           }

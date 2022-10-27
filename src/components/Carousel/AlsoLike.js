@@ -7,11 +7,17 @@ import "swiper/css/navigation";
 import { useProductsContext } from "../../context/products_context";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Carousel = () => {
-  const { also_like_products } = useProductsContext();
+  const { also_like_products, alsoLikeProducts } = useProductsContext();
+  console.log("also", also_like_products);
   const swiperNavPrevRef = useRef();
   const swiperNavNextRef = useRef();
+
+  useEffect(() => {
+    alsoLikeProducts();
+  }, []);
 
   return (
     <Swiper

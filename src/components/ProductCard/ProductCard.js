@@ -3,6 +3,7 @@ import "./product-card.css";
 import NoImage from "../../assets/No-Image.jpg";
 import { Link } from "react-router-dom";
 import { useProductsContext } from "../../context/products_context";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ProductCard = ({ item, index }) => {
   const { addCartItems } = useProductsContext();
@@ -21,7 +22,7 @@ const ProductCard = ({ item, index }) => {
               : {}
           }
         >
-          <img
+          <LazyLoadImage
             src={item.fields.images ? item.fields.images[0].url : NoImage}
             alt=""
           />

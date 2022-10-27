@@ -37,7 +37,7 @@
   padding-bottom: 1rem;
 }
 
-.single-product-bar {
+.product-bar {
   width: 100vw;
   height: 40px;
   background: var(--dark-red);
@@ -46,7 +46,7 @@
   align-items: center;
 }
 
-.single-product-bar p {
+.product-bar p {
   color: white;
   font-size: 0.9rem;
   text-transform: capitalize;

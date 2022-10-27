@@ -62,6 +62,29 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: "PRODUCTS_END" });
   };
 
+  const alsoLikeProducts = async () => {
+    dispatch({ type: "PRODUCTS_START" });
+    const temp = [];
+    await table.select({ view: "Grid view" }).eachPage(
+      function page(records, fetchNextPage) {
+        records.forEach(function (record) {
+          temp.push(record);
+        });
+        fetchNextPage();
+      },
+      function done(err) {
+        if (err) {
+          console.error(err);
+          dispatch({ type: "PRODUCTS_END" });
+          return;
+        }
+        dispatch({ type: "PRODUCTS", payload: temp });
+        dispatch({ type: "ALSO_LIKE_PRODUCTS" });
+      }
+    );
+    dispatch({ type: "PRODUCTS_END" });
+  };
+
   const getSingleProduct = async (id) => {
     dispatch({ type: "SINGLE_PRODUCT_START" });
     await table.find(id, function (err, record) {
@@ -187,6 +210,7 @@ export const ProductsProvider = ({ children }) => {
         clearCart,
         getRecords,
         addReview,
+        alsoLikeProducts,
       }}
     >
       {children}

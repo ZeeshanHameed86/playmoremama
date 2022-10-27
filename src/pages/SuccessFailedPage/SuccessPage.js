@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./success-failed-page.css";
-import congrats from "../../assets/Congrats.png";
+import congrats from "../../assets/Congrats.webp";
 import { Link } from "react-router-dom";
 import { useProductsContext } from "../../context/products_context";
 

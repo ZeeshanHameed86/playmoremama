@@ -1,6 +1,6 @@
 import React from "react";
 import "./success-failed-page.css";
-import failed from "../../assets/Failed.png";
+import failed from "../../assets/Failed.webp";
 import { Link } from "react-router-dom";
 
 const FailedPage = () => {

@@ -29,19 +29,9 @@ const products_reducer = (state, action) => {
     return { ...state, loading: true };
   }
   if (action.type === "SINGLE_PRODUCT") {
-    const { all_products } = state;
-    const filter = all_products.filter((item) => {
-      if (item.fields.images !== undefined) {
-        return item.fields;
-      }
-      return null;
-    });
-    // let shuffled = [...filter].sort(() => 0.5 - Math.random());
-    // shuffled = shuffled.slice(0, 4);
     return {
       ...state,
       single_product: action.payload,
-      also_like_products: filter,
     };
   }
   if (action.type === "SINGLE_PRODUCT_END") {
@@ -57,6 +47,20 @@ const products_reducer = (state, action) => {
       (item) => item.fields.category === action.payload
     );
     return { ...state, filtered_products: tempProducts };
+  }
+  if (action.type === "ALSO_LIKE_PRODUCTS") {
+    const { all_products } = state;
+    console.log("reducer", all_products);
+    const filter = all_products.filter((item) => {
+      if (item.fields.images !== undefined) {
+        return item.fields;
+      }
+      return null;
+    });
+    return {
+      ...state,
+      also_like_products: filter,
+    };
   }
   if (action.type === "CART_ITEMS") {
     const {

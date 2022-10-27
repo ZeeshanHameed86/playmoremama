@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./products-page.css";
-//import { MainFooter, Navbar, ProductCard } from "../../components";
 import MainFooter from "../../components/Footer/MainFooter";
 import Navbar from "../../components/Navbar/Navbar";
 import ProductCard from "../../components/ProductCard/ProductCard";
-//import { Carousel } from "../../components";
 import Carousel from "../../components/Carousel/Carousel";
 import { useProductsContext } from "../../context/products_context";
 
@@ -12,6 +10,8 @@ const ProductsPage = () => {
   const { loading, filterProducts, filtered_products, getRecords } =
     useProductsContext();
   const [fixed, setFixed] = useState(false);
+
+  console.log(filtered_products);
 
   useEffect(() => {
     getRecords();
@@ -31,9 +31,7 @@ const ProductsPage = () => {
 
   return (
     <section>
-      <div
-        className={fixed ? "single-product-bar fixed" : "single-product-bar"}
-      >
+      <div className={fixed ? "product-bar fixed" : "product-bar"}>
         <p>Mama founded + 100% natural handcrafted playdough</p>
       </div>
       <Navbar offset={40} />

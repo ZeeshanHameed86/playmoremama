@@ -8,9 +8,9 @@ import { useProductsContext } from "../../context/products_context";
 import left from "../../assets/left-arrow.svg";
 import right from "../../assets/right-arrow.svg";
 import all from "../../assets/All-slider.webp";
-import jar from "../../assets/Jar1.webp";
+import jar from "../../assets/Jar1-slider.webp";
 import bottle from "../../assets/bottle1-slider.webp";
-import dice from "../../assets/Dice.webp";
+import dice from "../../assets/Dice-slider.webp";
 
 const Carousel = () => {
   const { filterProducts } = useProductsContext();

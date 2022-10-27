@@ -1,7 +1,7 @@
 .digital-page {
   width: 100vw;
   min-height: calc(100vh - var(--nav-height));
-  margin-top: var(--nav-height);
+  margin-top: calc(var(--nav-height) + 2rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +17,11 @@
   align-items: center;
 }
 
+.digital-download h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
 .digital-download img {
   width: 600px;
 }
@@ -29,6 +34,7 @@
   border-radius: 1rem;
   margin-top: 3rem;
   cursor: pointer;
+  margin-bottom: 3rem;
 }
 
 @media screen and (max-width: 600px) {

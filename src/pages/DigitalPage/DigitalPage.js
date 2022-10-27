@@ -14,6 +14,7 @@ const DigitalPage = () => {
       <Navbar offset={0} />
       <section className="digital-page">
         <div className="digital-download">
+          <h1>File 1</h1>
           <img src={img} alt="" />
           <a
             href={downloadFile}
@@ -25,6 +26,7 @@ const DigitalPage = () => {
           </a>
         </div>
         <div className="digital-download">
+          <h1>File 2</h1>
           <img src={img2} alt="" />
           <a
             href={downloadFile2}
