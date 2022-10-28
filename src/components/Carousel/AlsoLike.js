@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import "./carousel.css";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,12 +6,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useProductsContext } from "../../context/products_context";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import NoImage from "../../assets/No-Image.webp";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 const Carousel = () => {
   const { also_like_products, alsoLikeProducts } = useProductsContext();
-  console.log("also", also_like_products);
   const swiperNavPrevRef = useRef();
   const swiperNavNextRef = useRef();
 
@@ -53,22 +52,29 @@ const Carousel = () => {
         swiper.navigation.update();
       }}
     >
-      {also_like_products.map((item, index) => (
-        <SwiperSlide key={item.id}>
-          <Link
-            to={`/products/${item.id}`}
-            onClick={() => window.scrollTo(0, 0)}
-          >
-            <div className="single-product-slide-container">
-              <div className="single-product-slide-img-container">
-                <img src={item.fields.images[0].url} alt="" />
+      {also_like_products.map((item, index) => {
+        return (
+          <SwiperSlide key={item.id}>
+            <Link
+              to={`/products/${item.id}`}
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              <div className="single-product-slide-container">
+                <div className="single-product-slide-img-container">
+                  <img
+                    src={
+                      item.fields.images ? item.fields.images[0].url : NoImage
+                    }
+                    alt=""
+                  />
+                </div>
+                <h3>{item.fields.name}</h3>
+                <p>${item.fields.price}.00</p>
               </div>
-              <h3>{item.fields.name}</h3>
-              <p>${item.fields.price}.00</p>
-            </div>
-          </Link>
-        </SwiperSlide>
-      ))}
+            </Link>
+          </SwiperSlide>
+        );
+      })}
       <div className="single-arrows-container">
         <div ref={swiperNavPrevRef} className="single-swiper-prev">
           <AiOutlineLeft />

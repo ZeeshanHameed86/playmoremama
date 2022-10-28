@@ -1,6 +1,6 @@
 import React from "react";
 import "./product-card.css";
-import NoImage from "../../assets/No-Image.jpg";
+import NoImage from "../../assets/No-Image.webp";
 import { Link } from "react-router-dom";
 import { useProductsContext } from "../../context/products_context";
 import { LazyLoadImage } from "react-lazy-load-image-component";

@@ -5,7 +5,7 @@ import MainFooter from "../../components/Footer/MainFooter";
 import Navbar from "../../components/Navbar/Navbar";
 import AlsoLike from "../../components/Carousel/AlsoLike";
 import buttonbtnimg from "../../assets/Header-btn-background.webp";
-import NoImage from "../../assets/No-Image.jpg";
+import NoImage from "../../assets/No-Image.webp";
 import { useProductsContext } from "../../context/products_context";
 import { useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
@@ -20,6 +20,8 @@ const SingleProductsPage = () => {
   const { loading, getSingleProduct, single_product, addCartItems } =
     useProductsContext();
   const [fixed, setFixed] = useState(false);
+
+  console.log(single_product);
 
   useEffect(() => {
     if (single_product.stock === 0) {
@@ -90,8 +92,8 @@ const SingleProductsPage = () => {
               alt=""
             />
             <div className="sub-images">
-              {single_product.images ? (
-                single_product.images.map((image, index) => {
+              {single_product.small_images ? (
+                single_product.small_images.map((image, index) => {
                   if (index > 0) {
                     return (
                       <img

@@ -50,7 +50,6 @@ const products_reducer = (state, action) => {
   }
   if (action.type === "ALSO_LIKE_PRODUCTS") {
     const { all_products } = state;
-    console.log("reducer", all_products);
     const filter = all_products.filter((item) => {
       if (item.fields.images !== undefined) {
         return item.fields;
@@ -65,7 +64,7 @@ const products_reducer = (state, action) => {
   if (action.type === "CART_ITEMS") {
     const {
       id,
-      cartItems: { name, price, images },
+      cartItems: { name, price, small_images },
       quantity,
     } = action.payload;
     const allItems = state.cart_items.filter((item) => item.id !== id);
@@ -80,7 +79,7 @@ const products_reducer = (state, action) => {
         id,
         name,
         price,
-        image: images && images[0].url,
+        image: small_images && small_images[0].url,
         quantity,
       };
       return { ...state, cart_items: [...state.cart_items, newItem] };

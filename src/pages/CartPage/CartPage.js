@@ -18,6 +18,8 @@ const CartPage = () => {
   let sortedCartItems =
     cart_items && cart_items.sort((a, b) => a.name.localeCompare(b.name));
 
+  console.log("cart", cart_items);
+
   const processPayment = async () => {
     setCheckoutStatus(true);
     const url = "/.netlify/functions/charge-card";
