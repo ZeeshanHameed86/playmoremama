@@ -80,7 +80,7 @@
     display: block;
   }
   .footer-bottom {
-    height: 130px;
+    min-height: 130px;
   }
   .footer-bottom-main {
     padding-top: 1.5rem;

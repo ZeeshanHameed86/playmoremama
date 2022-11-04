@@ -152,8 +152,18 @@ footer {
   .footer-brand-container {
     display: none;
   }
-  .insta-posts {
+  .footer-img-left,
+  .footer-img-right {
     display: none;
+  }
+  .footer-img-middle {
+    width: 100vw;
+    min-height: 400px;
+  }
+  .insta-posts {
+    grid-template-columns: 1fr;
+    min-height: 400px;
+    margin-top: 2rem;
   }
   .footer-title-container {
     display: block;
@@ -165,6 +175,6 @@ footer {
     font-size: 1.5rem;
   }
   footer {
-    height: 150px;
+    min-height: 150px;
   }
 }
